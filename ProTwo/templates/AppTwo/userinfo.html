@@ -8,21 +8,12 @@
     <title>User Info</title>
 </head>
 <body>
-    {% if user_info %}
-        <ol>
-            {% for person in user_info %}
-                <li>User Info</li>
-                <ul>
-                    <li>First name:{{person.first_name}}</li>
-                    <li>Last Name:{{person.last_name}}</li>
-                    <li>Email:{{person.email}}</li>
-                </ul>
-            {% endfor %}
 
-        </ol>
-    {% else %}
-        <p>No user info</p>
-    {% endif %}
+    <form method = "POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type = "submit" value="Submit">
+    </form>
     
 </body>
 </html>

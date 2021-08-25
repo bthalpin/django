@@ -6,4 +6,4 @@ class User(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique = True)
     def __str__(self):
-        return last_name+','+first_name
+        return self.last_name+','+self.first_name
